@@ -1,9 +1,9 @@
 import {test} from 'playwright/test'
-import { LoginPage } from '../../Pages/Login'
-import { ProductPage } from '../../Pages/Product';
-import { CartPage } from '../../Pages/CartPage';
-import { AddProducts } from '../../testData/UI/AddProducts.ts';
-import { RemoveProducts } from '../../testData/UI/RemoveProducts.ts';
+import { LoginPage } from '../../Pages/login'
+import { ProductPage } from '../../Pages/product';
+import { CartPage } from '../../Pages/cartPage';
+import { AddProducts } from '../../testData/UI/addProducts.ts';
+import { RemoveProducts } from '../../testData/UI/removeProducts.ts';
 import {config} from '../../config/env.ts'
 
 test.beforeEach("Login", async({page})=>{

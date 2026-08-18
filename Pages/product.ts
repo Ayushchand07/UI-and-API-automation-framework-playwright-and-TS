@@ -1,7 +1,6 @@
 import { Locator, Page } from '@playwright/test';
 import * as XLSX from 'xlsx';
-import { getRemoveProductLocator } from '../utils/UI/getLocators';
-import { getAddProductLocator } from '../utils/UI/getLocators';
+import { getRemoveProductLocator, getAddProductLocator } from '../utils/UI/getLocators';
 
 export class ProductPage{
 

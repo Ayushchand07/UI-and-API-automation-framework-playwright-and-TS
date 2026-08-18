@@ -1,10 +1,10 @@
 import {test, expect} from 'playwright/test'
-import { LoginPage } from '../../Pages/Login'
-import { ProductPage } from '../../Pages/Product';
-import { CartPage } from '../../Pages/CartPage';
-import { randomFirstName, randomLastName, randomNumber } from '../../utils/UI/TestDataGenerator'
-import { CheckoutPage } from '../../Pages/CheckoutPage';
-import { AddProducts } from '../../testData/UI/AddProducts';
+import { LoginPage } from '../../Pages/login'
+import { ProductPage } from '../../Pages/product';
+import { CartPage } from '../../Pages/cartPage';
+import { randomFirstName, randomLastName, randomNumber } from '../../utils/UI/testDataGenerator'
+import { CheckoutPage } from '../../Pages/checkoutPage';
+import { AddProducts } from '../../testData/UI/addProducts.ts';
 import {config} from '../../config/env.ts'
 
 const firstName = randomFirstName();

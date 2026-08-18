@@ -1,9 +1,9 @@
 import {test, expect} from 'playwright/test'
-import { BookingApiClient } from '../../utils/API/bookingAPIClient';
+import { BookingApiClient } from '../../utils/API/bookingApiClient';
 import { updateBookingData, bookingData } from '../../testData/API/bookingData';
 import { statusCodeValidator } from '../../utils/API/validators/statusCodevalidator';
 import { responseBodyValidator } from '../../utils/API/validators/responseBodyValidator';
-import { randomNumber } from '../../utils/UI/TestDataGenerator';
+import { randomNumber } from '../../utils/UI/testDataGenerator';
 import {config} from '../../config/env.ts'
 
 let client: BookingApiClient

@@ -1,5 +1,5 @@
 import {test, expect} from 'playwright/test'
-import { LoginPage } from '../../Pages/Login'
+import { LoginPage } from '../../Pages/login'
 import {config} from '../../config/env.ts'
 
 test("Scenario 1: Valid Login",{tag: ['@ui', '@regression']}, async({page})=>{
