@@ -101,7 +101,9 @@ Tests are grouped using Playwright tags:
 @negative
 
 
-# 4. Project Structure
+## 4. Project Structure
+
+```text
 .
 ├── .github/
 │   └── workflows/
@@ -109,10 +111,10 @@ Tests are grouped using Playwright tags:
 │       └── regression.yaml
 │
 ├── Pages/
-│   ├── login.ts
-│   ├── product.ts
-│   ├── cartPage.ts
-│   └── checkoutPage.ts
+│   ├── CartPage.ts
+│   ├── CheckoutPage.ts
+│   ├── Login.ts
+│   └── Product.ts
 │
 ├── config/
 │   ├── env.ts
@@ -123,25 +125,25 @@ Tests are grouped using Playwright tags:
 │   │   └── bookingData.ts
 │   │
 │   └── UI/
-│       ├── addProducts.ts
-│       ├── removeProducts.ts
-│       └── productList.xlsx
+│       ├── AddProducts.ts
+│       ├── RemoveProducts.ts
+│       └── ProductList.xlsx
 │
 ├── tests/
 │   ├── API/
 │   │   └── booking.spec.ts
 │   │
 │   └── UI/
+│       ├── checkout.spec.ts
 │       ├── login.spec.ts
-│       ├── products.spec.ts
-│       └── checkout.spec.ts
+│       └── products.spec.ts
 │
 ├── utils/
 │   ├── API/
 │   │   ├── bookingApiClient.ts
 │   │   ├── bookingEndPoints.ts
 │   │   └── validators/
-│   │       ├── statusCodevalidator.ts
+│   │       ├── statusCodeValidator.ts
 │   │       ├── responseBodyValidator.ts
 │   │       └── schemaValidator.ts
 │   │
@@ -149,9 +151,12 @@ Tests are grouped using Playwright tags:
 │       ├── getLocators.ts
 │       └── testDataGenerator.ts
 │
-├── playwright.config.ts
+├── .env
+├── .gitignore
 ├── package.json
+├── playwright.config.ts
 └── README.md
+```
 
 
 # 5. Prerequisites
