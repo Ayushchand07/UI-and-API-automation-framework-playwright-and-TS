@@ -85,7 +85,7 @@ test("Scenario 5 – Get a booking which doesn't exist",{tag: ['@api', '@regress
  
 // User tries to delete a booking which is not present
 
-test("Scenario 6 – Delete Booking thata doesn't exist",{tag: ['@api','@regression', '@negative']}, async({})=>{
+test("Scenario 6 – Delete Booking that doesn't exist",{tag: ['@api','@regression', '@negative']}, async({})=>{
     const authRs = await client.createToken(username, password)
     const authResponseBody = await authRs.json()
     const authToken = authResponseBody.token

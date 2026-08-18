@@ -1,21 +1,14 @@
 import { APIRequestContext } from "@playwright/test";
 import { bookingEndpoints } from './bookingEndPoints.ts'
-import {bookingApiconfig} from '../../config/bookingApi.ts'
+import {config} from '../../config/env.ts'
 
 export class BookingApiClient {
 
     constructor(private request: APIRequestContext) {}
 
-    async createToken(username: string | undefined, password: string | undefined){
+    async createToken(username: string, password: string){
 
-        if(!username){
-            throw new Error ("Booking API Username  is not defined in .env file")
-        }
-        if(!password){
-            throw new Error ("Booking API Password is not defined in .env file")
-        }
-
-        return await this.request.post(`${bookingApiconfig.bookingApiBaseUrl}${bookingEndpoints.auth}`, 
+        return await this.request.post(`${config.api.baseUrl}${bookingEndpoints.auth}`, 
             {
                 data:{
             "username": username,
@@ -27,7 +20,7 @@ export class BookingApiClient {
     async createBooking(data: object) {
 
         return await this.request.post(
-            `${bookingApiconfig.bookingApiBaseUrl}${bookingEndpoints.createBooking}`,
+            `${config.api.baseUrl}${bookingEndpoints.createBooking}`,
             {
                 data: data
             }
@@ -38,13 +31,13 @@ export class BookingApiClient {
 
         const endpoint = bookingEndpoints.getBooking.replace("{id}", id.toString());
 
-        return await this.request.get(`${bookingApiconfig.bookingApiBaseUrl}${endpoint}`);
+        return await this.request.get(`${config.api.baseUrl}${endpoint}`);
     }
 
     async updateBooking(id: number,data: object,token: string){
         const endpoint = bookingEndpoints.updateBooking.replace("{id}", id.toString());
 
-        return await this.request.put(`${bookingApiconfig.bookingApiBaseUrl}${endpoint}`, {
+        return await this.request.put(`${config.api.baseUrl}${endpoint}`, {
             data: data,
             headers: {
                 Cookie: `token=${token}`
@@ -56,7 +49,7 @@ export class BookingApiClient {
         
         const endpoint = bookingEndpoints.deleteBooking.replace("{id}", id.toString());
 
-        return await this.request.delete(`${bookingApiconfig.bookingApiBaseUrl}${endpoint}`, {
+        return await this.request.delete(`${config.api.baseUrl}${endpoint}`, {
             headers: {
             Cookie: `token=${token}`
         }
