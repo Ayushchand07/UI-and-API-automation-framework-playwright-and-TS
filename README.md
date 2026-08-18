@@ -92,13 +92,13 @@ Playwright is configured to capture:
 # Test Tags
 
 Tests are grouped using Playwright tags:
-
+```text
 @ui
 @api
 @sanity
 @regression
 @negative
-
+```
 
 ## 4. Project Structure
 
@@ -182,6 +182,7 @@ npx playwright install
 
 ## Environment Variables (Mandatory else env.ts would throw error)
 
+```text
 BASE_URL = " <Value>"
 PASSWORD = " <Value>"
 USER_NAME = " <Value>"
@@ -193,6 +194,7 @@ UPDATE_BOOKING = " <Value>"
 DELETE_BOOKING = " <Value>"
 BOOKING_API_USERNAME = " <Value>"
 BOOKING_API_PASSWORD = " <Value>"
+```
 
 # 7. How to Execute UI Tests
 
