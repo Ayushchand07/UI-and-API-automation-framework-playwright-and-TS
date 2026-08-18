@@ -35,47 +35,46 @@ This project demonstrates a reusable Playwright automation framework for:
 
 ---
 
-# 3. Framework Approach
+## 3. Framework Approach
 
 The framework follows a modular and reusable design.
 
-tests
- │
- ├── UI Tests
- │      ↓
- │   Page Objects
- │      ↓
- │   Reusable Utilities
- │
- └── API Tests
-        ↓
-    Booking API Client
-        ↓
-    API Endpoints
-        ↓
-    Validators
+```text
+Tests
+├── UI Tests
+│   ├── Page Objects
+│   └── Reusable Utilities
+│
+└── API Tests
+    ├── Booking API Client
+    ├── API Endpoints
+    └── Validators
+```
 
-# UI Automation    
+### UI Automation
 
 UI tests use the Page Object Model.
 
-Pages/
-├── login.ts
-├── product.ts
-├── cartPage.ts
-└── checkoutPage.ts
+```text
+Pages
+├── Login.ts
+├── Product.ts
+├── CartPage.ts
+└── CheckoutPage.ts
+```
 
-# API Automation
+### API Automation
 
-API tests use a reusable BookingApiClient.
+API tests use a reusable `BookingApiClient`.
 
+```text
 BookingApiClient
 ├── createToken()
 ├── createBooking()
 ├── getBooking()
 ├── updateBooking()
 └── deleteBooking()
-
+```
 # Test Data
 
 Test data is maintained separately from test logic.
@@ -233,7 +232,7 @@ npm run allure:serve
 
 * Required credentials are provided through environment variables.
 
-# 12. AI Assitance
+# 12. AI Assistance
 
 * Framework design discussions -- After research, I created the config folder and managed all the environments centrally through it.
 
@@ -248,37 +247,3 @@ npm run allure:serve
 * Parallel API/UI execution optimization
 * customized reporting fro better visualization(enhancements in Allure reporting )
 * Better CI/CD integration
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Scenarios Covered
-
-### UI
-1. Valid Login
-2. Invalid Login
-3. Add products
-4. Checkout
-5. Cart validation
-
-### API
-1. Get booking
-2. Create booking
-3. Update booking
-4. Delete booking
-5. Get nonexistent booking
-6. Delete nonexistent booking
-
-## Reporting
-1. Run test using bove mentioned commands
-2. npm run report
