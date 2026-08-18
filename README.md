@@ -9,11 +9,11 @@
 
 
 ## Setup
+1. npm install
+2. npx playwright install
 
-npm install
-npx playwright install
 
-## Environment Variables
+## Environment Variables (Mandatory else env.ts would throw error)
 
 BASE_URL
 PASSWORD
