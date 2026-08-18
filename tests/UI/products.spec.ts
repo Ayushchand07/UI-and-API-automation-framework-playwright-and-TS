@@ -2,7 +2,7 @@ import {test} from 'playwright/test'
 import { LoginPage } from '../../Pages/login'
 import { ProductPage } from '../../Pages/product';
 import { CartPage } from '../../Pages/cartPage';
-import { AddProducts } from '../../testData/UI/addProducts';
+import { addProducts } from '../../testData/UI/addProducts';
 import { RemoveProducts } from '../../testData/UI/removeProducts.ts';
 import {config} from '../../config/env.ts'
 
@@ -15,11 +15,11 @@ test.beforeEach("Login", async({page})=>{
 
 test("Scenario 5: Multiple Products / Cart Validation", {tag: ['@ui']},async({page})=>{
     const productPage = new ProductPage(page)
-    await productPage.addProductsToCart(AddProducts)
+    await productPage.addProductsToCart(addProducts)
     await productPage.removeProducts(RemoveProducts)
     const cartPage = new CartPage(page)
     await cartPage.navigateToCart()
-    await cartPage.verifyFinalItemsInCart(AddProducts,RemoveProducts)
+    await cartPage.verifyFinalItemsInCart(addProducts,RemoveProducts)
 })
 
 

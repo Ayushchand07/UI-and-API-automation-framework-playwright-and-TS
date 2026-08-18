@@ -4,7 +4,7 @@ import { ProductPage } from '../../Pages/product';
 import { CartPage } from '../../Pages/cartPage';
 import { randomFirstName, randomLastName, randomNumber } from '../../utils/UI/testDataGenerator'
 import { CheckoutPage } from '../../Pages/checkoutPage';
-import { AddProducts } from '../../testData/UI/addProducts';
+import { addProducts } from '../../testData/UI/addProducts';
 import {config} from '../../config/env.ts'
 
 const firstName = randomFirstName();
@@ -21,10 +21,10 @@ test.beforeEach("Login", async({page})=>{
 
 test("Scenario 4: Checkout",{tag: ['@ui', '@regression']}, async({page})=>{
     const productPage = new ProductPage(page)
-    await productPage.addProductsToCart(AddProducts)
+    await productPage.addProductsToCart(addProducts)
     const cartPage = new CartPage(page)
     await cartPage.navigateToCart()
-    await cartPage.verifyFinalItemsInCart(AddProducts,[])
+    await cartPage.verifyFinalItemsInCart(addProducts,[])
     await cartPage.navigateToCheckout();
     const checkoutPage = new CheckoutPage(page)
     await checkoutPage.fillCheckoutDetails(firstName, lastName, pincode)
