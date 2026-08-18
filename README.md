@@ -116,8 +116,7 @@ Tests are grouped using Playwright tags:
 │   └── Product.ts
 │
 ├── config/
-│   ├── env.ts
-│   └── bookingApi.ts
+│   ├── env.ts   
 │
 ├── testData/
 │   ├── API/
