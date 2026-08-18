@@ -28,15 +28,19 @@ jobs:
         run: npx playwright install --with-deps chromium
 
       - name: Run Regression Tests
-        run: npx playwright test --grep "@regression"
         env:
           BASE_URL: ${{ secrets.BASE_URL }}
           USER_NAME: ${{ secrets.USER_NAME }}
           PASSWORD: ${{ secrets.PASSWORD }}
-
           API_BASE_URL: ${{ secrets.API_BASE_URL }}
+          API_AUTH: ${{ secrets.API_AUTH }}
+          GET_BOOKING: ${{ secrets.GET_BOOKING }}
+          CREATE_BOOKING: ${{ secrets.CREATE_BOOKING }}
+          UPDATE_BOOKING: ${{ secrets.UPDATE_BOOKING }}
+          DELETE_BOOKING: ${{ secrets.DELETE_BOOKING }}
           BOOKING_API_USERNAME: ${{ secrets.BOOKING_API_USERNAME }}
           BOOKING_API_PASSWORD: ${{ secrets.BOOKING_API_PASSWORD }}
+        run: npx playwright test --grep "@Regression" 
 
       - name: Upload Playwright Report
         if: always()
