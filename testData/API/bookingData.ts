@@ -1,4 +1,4 @@
-import { randomFirstName, randomNumber, randomLastName  } from "../../utils/UI/TestDataGenerator";
+import { randomFirstName, randomNumber, randomLastName  } from "../../utils/UI/testDataGenerator";
 
 export const bookingData = {
     firstname: "Ayush",

@@ -4,7 +4,7 @@ import { ProductPage } from '../../Pages/product';
 import { CartPage } from '../../Pages/cartPage';
 import { randomFirstName, randomLastName, randomNumber } from '../../utils/UI/testDataGenerator'
 import { CheckoutPage } from '../../Pages/checkoutPage';
-import { AddProducts } from '../../testData/UI/addProducts.ts';
+import { AddProducts } from '../../testData/UI/addProducts';
 import {config} from '../../config/env.ts'
 
 const firstName = randomFirstName();

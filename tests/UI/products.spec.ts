@@ -2,7 +2,7 @@ import {test} from 'playwright/test'
 import { LoginPage } from '../../Pages/login'
 import { ProductPage } from '../../Pages/product';
 import { CartPage } from '../../Pages/cartPage';
-import { AddProducts } from '../../testData/UI/addProducts.ts';
+import { AddProducts } from '../../testData/UI/addProducts';
 import { RemoveProducts } from '../../testData/UI/removeProducts.ts';
 import {config} from '../../config/env.ts'
 
