@@ -9,10 +9,24 @@
     "test:sanity": "playwright test --grep @sanity",
     "test:regression": "playwright test --grep @regression",
     "report": "playwright show-report",
-  
     "allure:generate": "allure generate allure-results --clean -o allure-report",
     "allure:open": "allure open allure-report",
-    "allure:serve": "allure serve allure-results"
+    "allure:serve": "allure serve allure-results",
+
+    "env:dev": "shx cp config/environments/dev.env .env",
+    "env:qa": "shx cp config/environments/qa.env .env",
+    "env:staging": "shx cp config/environments/staging.env .env",
+
+    "test:dev": "npm run env:dev && playwright test",
+    "test:qa": "npm run env:qa && playwright test",
+    "test:staging": "npm run env:staging && playwright test",
+
+    "test:qa:sanity": "npm run env:qa && playwright test --grep @sanity",
+    "test:qa:regression": "npm run env:qa && playwright test --grep @regression"
+
+
+
+
   },
   "keywords": [],
   "author": "",
@@ -21,7 +35,8 @@
   "devDependencies": {
     "@playwright/test": "^1.62.1",
     "@types/node": "^26.2.0",
-    "allure-playwright": "^3.10.2"
+    "allure-playwright": "^3.10.2",
+    "shx": "^0.4.0"
   },
   "dependencies": {
     "ajv": "^8.20.0",
