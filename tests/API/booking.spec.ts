@@ -4,6 +4,10 @@ import { updateBookingData, bookingData } from '../../testData/API/bookingData';
 import { statusCodeValidator } from '../../utils/API/validators/statusCodevalidator';
 import { responseBodyValidator } from '../../utils/API/validators/responseBodyValidator';
 import { randomNumber } from '../../utils/UI/testDataGenerator';
+import getBookingSchema from '../../testData/API/schema/getBookingSchema.json'
+import createBookingSchema from '../../testData/API/schema/createBookingSchema.json'
+import updateBookingSchema from '../../testData/API/schema/updateBookingSchema.json'
+import { schemaValidator } from '../../utils/API/validators/schemaValidator.ts';
 import {config} from '../../config/env.ts'
 
 let client: BookingApiClient
@@ -23,6 +27,7 @@ test("Scenario 1 – Get Booking",{tag: ['@api', '@sanity', '@regression']}, asy
     await statusCodeValidator.validateStatusCode(rs1, 200);
     const getBookingResponseBody = await rs1.json()
     await responseBodyValidator.validateResponseBody(getBookingResponseBody,bookingData)
+    await schemaValidator.validateSchema(rs1, getBookingSchema)
 
 })
 
@@ -30,6 +35,7 @@ test("Scenario 1 – Get Booking",{tag: ['@api', '@sanity', '@regression']}, asy
 test("Scenario 2 – Create Booking", {tag: ['@api']},async({})=>{
     const rs = await client.createBooking(bookingData)
     await statusCodeValidator.validateStatusCode(rs, 200);
+    await schemaValidator.validateSchema(rs, createBookingSchema)
 })
 
 test("Scenario 3 – Update Booking", {tag: ['@api']}, async({})=>{
@@ -47,6 +53,7 @@ test("Scenario 3 – Update Booking", {tag: ['@api']}, async({})=>{
     const updateBookingResponseBody = await updateRs.json()
     await statusCodeValidator.validateStatusCode(updateRs,200)
     await responseBodyValidator.validateResponseBody(updateBookingResponseBody,updateBookingData)
+    await schemaValidator.validateSchema(updateRs, updateBookingSchema)
 
 })
 
@@ -67,6 +74,7 @@ test("Scenario 4 – Delete Booking",{tag: ['@api', '@sanity',]}, async({})=>{
 
     const getResponse = await client.getBooking(bookingId);
     await statusCodeValidator.validateStatusCode(getResponse,404)
+    await schemaValidator.validateSchema(rs, createBookingSchema)
 })
 
 //------------------- Negative scenarios--------------------------------
@@ -80,6 +88,7 @@ test("Scenario 5 – Get a booking which doesn't exist",{tag: ['@api', '@regress
     const getBookingResponseBody = await rs.text()
     await statusCodeValidator.validateStatusCode(rs, 404);
     await expect( getBookingResponseBody).toContain('Not Found')
+    
 })
 
  
