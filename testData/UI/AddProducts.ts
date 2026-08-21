@@ -1,1 +1,0 @@
-export const addProducts = ['Sauce Labs Backpack', 'Test.allTheThings() T-Shirt (Red)', 'Sauce Labs Bolt T-Shirt','Sauce Labs Bike Light']
